@@ -222,14 +222,14 @@ p {
   textarea {
       resize: none;
       border-radius: 10px;
-      background-color: #f1faee;
+      background-color: #E2DBE2;
   }
 
   input[type=text] {
       height: 20px;
         border-radius: 10px;
       border: none;
-      background-color: #f1faee;
+      background-color: #E2DBE2;
       
      
   }
