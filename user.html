@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="user.css">
+    <title>Blog</title>
+</head>
+<body id="top">
+    <nav class="navigation">
+        <span class="logo">Dallas</span>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+           
+            </ul>
+            
+    </nav>
+    <button type="button" class="open-update" class=""><i class="fas fa-user-edit"></i> </button>
+      <div class="show-user">
+         
+      </div>
+      
+      
+      <div class="modal-user">
+      <form action="" class="user-form">
+        <span class="close">&times;</span>
+        <h2>Update profile</h2>
+
+        <label for="birthday">Date od birth</label>
+        <input type="date" name="birthday" id="birthday">
+
+        <label for="skills">Skills</label>
+        <input id="skills" type="text" name="skills">
+
+        <label for="phone">Phone number</label>
+        <input id="phone" type="text" name="phone">
+
+        <label for="edu">Education</label>
+        <input id="edu" type="text" name="edu">
+
+        <label for="interested">Interested in</label>
+        <input id="interested" type="text" name="interested">
+
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+        
+        <button type="submit"  class="updateBtn">Submit</button>
+        
+    </form>
+  </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+<script src="user.js"></script>
+
+</body>
+
+</html>

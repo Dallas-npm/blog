@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="index.css">
+    <title>Blog</title>
+</head>
+<body id="top">
+    <nav class="navigation">
+        <span class="logo">Dallas</span>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+            </ul>
+           
+    </nav>
+    <div class="content">
+        <div class="user-info">
+            <p>Signed in as </p>
+            <span class="userName"></span>
+            <hr>
+                <div class="left-nav">
+                    <a class="about-user" href="user.html">Profile</a>
+                    <button class="create-post">Create post</button>
+                   <a href="#top" class="to-top" onclick="scrollToTop()" ><i class="fas fa-arrow-alt-circle-up"></i></a>
+                </div>
+            
+        </div>
+        <div class="post-modal">
+           
+            <form action="" class="post-form">
+                <span class="close">&times;</span>
+                <input id="title" type="text" placeholder="Title">
+                <input type="file" onchange = "uploadData()" id="files"  name="Files[]"  accept="image/*">
+                <p class="alertMsg"></p>
+                <textarea id="subject" name="subject" rows="20" cols="50"></textarea>
+                
+                <button type="submit"  class="postBtn">Submit</button>
+                
+            </form>
+           
+        </div>
+        <div class="post-display">
+            <ul class="allPosts">
+                
+            </ul>
+           
+
+           
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+<script src="index.js"></script>
+
+</body>
+
+</html>
