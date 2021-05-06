@@ -13,6 +13,7 @@ var firebaseConfig = {
   let database = firebase.database();
 
   let closeForm = document.querySelector(".close");
+  let loader = document.querySelector(".loader");
   
  // logout button
   logout.addEventListener("click", () => {
@@ -48,12 +49,24 @@ let date = d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear();
     
     }
   }
+
+  let loginMsg = document.querySelector(".login-msg");
   
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log(user.displayName + " has logged in");
      
     } else {
+      loginMsg.style.display = "block";
+      loginMsg.innerHTML = `<h2>You are not logged in, redirecting to login page</h2>`;
+     
+      loader.style.display = "block";
+      setTimeout(() => {
+      
+        window.location.href = "login.html";
+        loader.style.display = "none";
+        
+      },  3000);
       console.log("User has logged out");
     }
   });
@@ -126,20 +139,8 @@ getUpdate.on("value", snap => {
     let showData = document.createElement("div");
     showData.classList.add("show-data");
 
-    showData.innerHTML =/* `<span></span>
-    <h3 class="prof-birth">Date of birth: ${profile.birth}</h3>
-    <span>Phone:</span>
-    <p class="prof-phone">${profile.phone}</p>
-    <span>Education:</span>
-    <p class="prof-edu">${profile.education}</p>
-    <span>Interested in:</span>
-    <p class="prof-interested">${profile.interested}</p>
-    <span>Skills:</span>
-    <p class="prof-skills">${profile.skills}</p>
-    <span>Bio:</span>
-    <p class="prof-bio">${profile.bio}</p>`;*/
-
-    `<table id="profile">
+    showData.innerHTML =
+     `<table id="profile">
     <tr>
       <td>Date of birth:</td>
       <td>${profile.birth}</td>
@@ -170,17 +171,6 @@ getUpdate.on("value", snap => {
   }
   })
 });
-
-
-
-
-
-
-
-
-
-
-
 
 let updateUser = (birth, skills, phone, education, interested, bio) => {
   let postData = {

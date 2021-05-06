@@ -26,6 +26,9 @@ var firebaseConfig = {
   let alertMsg = document.querySelector(".alertMsg");
   let allPosts = document.querySelector(".allPosts");
   let postDisplay = document.querySelector(".post-display");
+  let userInfo = document.querySelector(".user-info");
+  let loader = document.querySelector(".loader");
+  let inputError = document.querySelector(".inputError");
  
 
   logout.addEventListener("click", () => {
@@ -46,11 +49,13 @@ var firebaseConfig = {
 
 closeForm.addEventListener("click", (e) => {
   e.preventDefault();
+  inputError.innerHTML = "";
   modal.style.display = "none";
 })
 
 window.addEventListener("click", (e) => {
   if(e.target === modal) {
+    inputError.innerHTML = "";
     modal.style.display = "none"
   
   }
@@ -87,13 +92,17 @@ let uploadData = () => {
       let title =  document.querySelector("#title").value;
     let subject = document.querySelector("#subject").value;
     let postedBy = username;
+    if(title === "" && subject === "") {
+      inputError.innerHTML = "Please type title and text";
+    } else{
     writeUserData(id, title, subject, ImgUrl, postedBy, date);
   
     postForm.reset();
     modal.style.display = "none";
     alertMsg.innerHTML="";
-    ImgUrl = "";
-    
+    ImgUrl = null;
+    inputError.innerHTML = "";
+    }
   });
 
  
@@ -108,7 +117,6 @@ let uploadData = () => {
      
       snapshot.forEach((childsnapshot) => {
         childsnapshot.forEach(postsnap => {
-          
         let post = postsnap.val();
         let postList = document.createElement("li");
         let postKey = postsnap.key;
@@ -165,7 +173,7 @@ let uploadData = () => {
        
      });
     } else {
-      
+      console.log("wtf");
      database.ref('posts/'+ uid + '/' + id).set({
       title : title,
       subject : subject,
@@ -187,15 +195,24 @@ let uploadData = () => {
       
     }
   }
-  
-
- // if(childsnapshot.key === uid) {}
+  let loginMsg = document.querySelector(".login-msg");
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log(user.displayName + " has logged in");
       userName.innerHTML = user.displayName;
     } else {
+      loginMsg.style.display = "block";
+      loginMsg.innerHTML = `<h2>You are not logged in, redirecting to login page</h2>`;
+     
+      userInfo.style.display = "none";
+      loader.style.display = "block";
+      setTimeout(() => {
+      
+        window.location.href = "login.html";
+        loader.style.display = "none";
+        
+      },  3000);
       console.log("User has logged out");
     }
   });

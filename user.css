@@ -131,7 +131,7 @@ p {
 .nav {
 
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
 }
 .nav > li {
     margin-right: 15px;
@@ -187,6 +187,7 @@ p {
         border-radius: 10px;
       border: none;
       background-color: #E2DBE2;
+      margin-bottom: 8px;
       
      
   }
@@ -266,7 +267,6 @@ p {
   }
   .show-profile {
       color: white;
-      border: 1px solid black;
       display: flex;
       width: 40%;
       margin: auto;
@@ -284,22 +284,31 @@ p {
   }
 
   .show-profile span {
-      color: gold;
+      color: #2db9b0;
       border-bottom: 1px solid white;
-      width: 30%;
       text-align: center;
       margin-bottom: 40px;
   }
 
 .open-update {
-    margin-left: 96%;
-    padding: 0px 15px;
+    margin-left: 64%;
+    background-color: #232526;
+    border: 2px solid #2db9b0;
+    padding: 3px;
+    border-radius: 5%;
+    color: white;
+    font-family: 'Arvo', serif;
+}
+
+.open-update:hover {
+    background-color: #2db9b0;
+    color: white;
+
 }
  
 
 .show-data {
     color: white;
-    border: 1px solid black;
     display: flex;
     width: 40%;
     margin: auto;
@@ -309,7 +318,7 @@ p {
 
 #profile {
     width: 100%;
-    border: 1px solid white;
+    border: 1px solid #2db9b0;
     border-collapse: collapse;
 }
 
@@ -317,3 +326,72 @@ p {
    
     padding: 8px;
 }
+
+
+/* media queries */
+
+@media screen and (max-width: 600px) {
+    .navigation a {
+      color: gold;
+      width: 100%;
+    }
+
+    .open-update {
+        margin-left: 83%; 
+        padding: 0px 15px;
+    }
+
+   
+  }
+
+@media screen and (max-width: 300px) {
+    .navigation a {
+      color: red;
+      width: 100%;
+    }
+
+    .open-update {
+        margin-left: 45%; 
+        padding: 0px 15px;
+    }
+    .show-profile span {
+        color: #2db9b0;
+        border-bottom: 1px solid white;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .user-form {
+        width: 90%;
+    }
+  }
+  .loader {
+    display: none;
+    width: 160px;
+    overflow: auto;
+    z-index: 101;
+    height: 160px;
+    border-radius: 50%;
+    border: 10px solid;
+    border-color: #66FCF1 #17181757;
+    animation: 1.5s spin infinite;
+    margin: 15% auto;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+  .login-msg {
+    display: none;
+    position: absolute;
+    left: 32%;
+    top: 35%;
+    border: 1px solid white;
+    padding: 20px;
+    color: white;
+
+  }
+
+ 

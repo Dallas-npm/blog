@@ -22,6 +22,8 @@ let regBtn = document.querySelector(".regBtn");
 let formRegister = document.querySelector(".form-register");
 let formLogin = document.querySelector(".form-login");
 let loader = document.querySelector(".loader");
+let inputError = document.querySelector(".input-error");
+let registerError =  document.querySelector(".register-error");
 
 register.onclick = () => {
   formRegister.style.display = "block";
@@ -32,11 +34,15 @@ register.onclick = () => {
 
 cancelBtn.addEventListener("click", () => {
   formRegister.style.display = "none";
+  formRegister.reset();
+  registerError.innerHTML = "";
   document.body.style.backgroundColor = "#0f0e17"; 
 });
 
 loginCancel.addEventListener("click", () => {  
   formLogin.style.display = "none";
+  formLogin.reset();
+  inputError.innerHTML = "";
   document.body.style.backgroundColor = "#0f0e17"; 
   
 });
@@ -46,6 +52,9 @@ window.addEventListener("click", (e) => {
   if(e.target == form) {
       formRegister.style.display = "none";
       formLogin.style.display = "none";
+      formRegister.reset();
+      registerError.innerHTML = "";
+      inputError.innerHTML = "";
       document.body.style.backgroundColor = "#0f0e17";
   }
 });
@@ -94,8 +103,8 @@ formRegister.addEventListener("submit", (e) => {
   
   })
   .catch((error) => {
-    let errorCode = error.code;
     let errorMessage = error.message;
+   registerError.innerHTML = `<p>${errorMessage}</p>`;
     // ..
   });
 
@@ -119,13 +128,16 @@ formLogin.addEventListener("submit", (e) => {
   })
   .catch((error) => {
     let errorCode = error.code;
+    console.log(errorCode);
     let errorMessage = error.message;
+    inputError.innerHTML = `<p>${errorMessage} Please use valid email and password</p>`;
+    
   });
 
   formLogin.reset();
   
  
-})
+});
 
 let updateuserData = () => {
 let user = firebase.auth().currentUser;

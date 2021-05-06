@@ -14,11 +14,12 @@
     <nav class="navigation">
         <span class="logo">Dallas</span>
         <ul class="nav">
-            <li><a href="index.html">Home</a></li>
-            <li id="logout"><a href="#">Logout</a></li>
+            <li><a href="index.html"><i class="fas fa-home"> </i>Home</a></li>
+            <li id="logout"><a href="#"><i class="fas fa-sign-out-alt"> </i>Logout</a></li>
             </ul>
            
     </nav>
+    
     <div class="content">
         <div class="user-info">
             <p>Signed in as </p>
@@ -35,17 +36,21 @@
            
             <form action="" class="post-form">
                 <span class="close">&times;</span>
+                <label for="title">Title*:</label>
                 <input id="title" type="text" placeholder="Title">
                 <input type="file" onchange = "uploadData()" id="files"  name="Files[]"  accept="image/*">
                 <p class="alertMsg"></p>
+                <label for="text">Text*:</label>
                 <textarea id="subject" name="subject" rows="20" cols="50"></textarea>
-                
+                <span class="inputError"></span>
                 <button type="submit"  class="postBtn">Submit</button>
                 
             </form>
            
         </div>
         <div class="post-display">
+            <div class="login-msg"></div>
+            <div class="loader"></div>
             <ul class="allPosts">
                 
             </ul>
@@ -55,7 +60,7 @@
         </div>
     </div>
 
-
+    
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>

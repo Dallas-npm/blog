@@ -58,7 +58,6 @@ li {
 }
 
 .nav-right {
-    width: 45%;
     display: flex;
     justify-content: flex-end;
    
@@ -155,5 +154,10 @@ button:hover {
     to {
         transform: rotate(360deg);
     }
+}
+
+.input-error, .register-error {
+    color: red;
+    font: 0.9rem "Roboto", sans-serif;
 }
 

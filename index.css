@@ -82,10 +82,12 @@ li {
 .loader {
     display: none;
     width: 160px;
+    overflow: auto;
+    z-index: 101;
     height: 160px;
     border-radius: 50%;
     border: 10px solid;
-    border-color: #00ff87 #00422357;
+    border-color: #66FCF1 #17181757;
     animation: 1.5s spin infinite;
     margin: 15% auto;
 }
@@ -146,7 +148,7 @@ p {
 .nav {
 
    display: flex;
-   justify-content: center;
+   justify-content: flex-end;
 }
 .nav > li {
     margin-right: 15px;
@@ -221,18 +223,30 @@ p {
 
   textarea {
       resize: none;
+      margin-bottom: 5px;
       border-radius: 10px;
       background-color: #E2DBE2;
   }
 
   input[type=text] {
       height: 20px;
+      margin-bottom: 5px;
         border-radius: 10px;
       border: none;
       background-color: #E2DBE2;
-      
-     
   }
+
+  #files {
+    margin: 7px 470px 4px 0px;
+  }
+
+  .inputError {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+    font-family: 'Arvo', serif;
+  }
+
 
   .postBtn {
       height: 30px;
@@ -335,4 +349,26 @@ p {
   }
 
 
- 
+  .login-msg {
+    display: none;
+    position: absolute;
+    left: 32%;
+    top: 35%;
+    border: 1px solid white;
+    padding: 20px;
+    color: white;
+
+  }
+
+
+ /* media queries */ 
+
+ @media screen and (max-width: 300px) { 
+    .left-nav {
+        margin-top: 260px;
+    }
+
+    .post-form {
+        width: 90%;
+    }
+ }

@@ -13,8 +13,8 @@
            
             <ul class="nav-right">
             
-            <li id="signIn"><a href="#">Sign in</a></li>
-            <li id="register"><a href="#">Sign up</a></li>
+            <li id="signIn"><a href="#"><i class="fas fa-sign-in-alt"></i> Sign in</a></li>
+            <li id="register"><a href="#"><i class="fas fa-user-plus"></i> Sign up</a></li>
        
         </ul>
     </nav>
@@ -24,15 +24,16 @@
             <div class="container">
                 <h1>Sign up</h1>
                 <hr>
-                <label for="username">Username</label>
+                <span class="register-error"></span>
+                <label for="username">Username*</label>
                 <input id="name" type="text" placeholder="Enter nickname" name="nickname" required>
-                <label for="fullname">Full Name</label>
+                <label for="fullname">Full Name*</label>
                 <input id="fullName" type="text" placeholder="Enter full name" name="nickname" required>
-                <label for="email">Email</label>
+                <label for="email">Email*</label>
                 <input id="email" type="text" placeholder="Enter email" name="email" required>
-                <label for="psw">Password</label>
+                <label for="psw">Password*</label>
                 <input id="psw" type="password" placeholder="Enter password" name="psw" required>
-                <label for="desc">Description</label>
+                <label for="desc">Description*</label>
                 <input id="desc" type="text" placeholder="Enter description" name="nickname" required>
                <p>By creating an account you agree to our <a href="#" style="color: dodgerblue;">Terms & Privacy</a></p>
                <div class="buttons">
@@ -46,10 +47,11 @@
             <div class="container">
                 <h1>Sign in</h1>
                 <hr>
-                <label for="email">Email</label>
+                <span class="input-error"></span>
+                <label for="email">Email*</label>
                 <input id="uemail" type="text" placeholder="Enter email" name="email" required>
 
-                <label for="psw">Password</label>
+                <label for="psw">Password*</label>
                 <input id="upsw" type="password" placeholder="Enter password" name="psw" required>
                <div class="buttons">
                    <button type="button" class="loginCancel">Cancel</button>
