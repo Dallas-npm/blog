@@ -122,7 +122,7 @@ let uploadData = () => {
         postList.setAttribute("data-key", postKey);
         
         let deleteBtn = document.createElement("button");
-        deleteBtn.setAttribute("class", "fas fa-minus-square");
+        deleteBtn.setAttribute("class", "far fa-times-circle");
         deleteBtn.setAttribute("id", "delete-post");
 
        postList.classList.add("postList");

@@ -274,6 +274,7 @@ p {
       flex-direction: column;
       margin-bottom: 30px;
       align-items: flex-start;
+      border-radius: 10px;
   }
 
   li > h2 {
@@ -301,9 +302,10 @@ p {
   }
 
   #delete-post {
-    font-size: 1.9rem;
-    margin-top: 1rem;
-    margin-left: 95%;
+    font-size: 1.5rem;
+    margin-top: -30px;
+    margin-left: 96%;
+
   }
 
   #delete-post:hover {
