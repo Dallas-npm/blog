@@ -189,3 +189,23 @@ let updateUser = (birth, skills, phone, education, interested, bio) => {
 
   return database.ref().update(updates);
 }
+
+
+let deleteProfile = document.querySelector(".delete-profile");
+
+deleteProfile.addEventListener("click", e => {
+  e.preventDefault();
+  let user = firebase.auth().currentUser;
+console.log(user);
+if(user.uid === uid) {
+  
+  database.ref('users').child(uid).set(null);
+  database.ref('profiles').child(uid).set(null);  
+user.delete().then(() => {
+  showUser.innerHTML = "";
+  window.href = "login.html";
+}).catch(error => {
+  console.log(error.message);
+});
+}
+});

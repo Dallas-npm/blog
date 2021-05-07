@@ -152,12 +152,14 @@ button:hover {
 .loader {
     display: none;
     width: 160px;
+    overflow: auto;
+    z-index: 101;
     height: 160px;
     border-radius: 50%;
     border: 10px solid;
     border-color: #66FCF1 #17181757;
     animation: 1.5s spin infinite;
-    margin: 15% auto;
+    margin: 18% auto -32%;
 }
 @keyframes spin {
     to {

@@ -203,6 +203,8 @@ p {
       background: #414345
   }
 
+ 
+
   .allPosts { 
       margin-left: 10%;
    }
@@ -291,7 +293,6 @@ p {
   }
 
 .open-update {
-    margin-left: 64%;
     background-color: #232526;
     border: 2px solid #2db9b0;
     padding: 3px;
@@ -299,11 +300,24 @@ p {
     color: white;
     font-family: 'Arvo', serif;
 }
+.delete-profile {
+    background-color: #232526;
+    border: 2px solid #2db9b0;
+    padding: 3px;
+    border-radius: 5%;
+    color: white;
+    font-family: 'Arvo', serif;
+    margin-right: 277px;
+}
 
-.open-update:hover {
+.open-update:hover, .delete-profile:hover {
     background-color: #2db9b0;
     color: white;
 
+}
+
+.buttons {
+    margin-left: 30%;
 }
  
 

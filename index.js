@@ -34,7 +34,6 @@ var firebaseConfig = {
   logout.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
     window.location.href = "login.html";
-    console.log(currentUser.email + " is logged out");
   }).catch((error) => {
       console.log(error.message);
   });
@@ -144,7 +143,6 @@ let uploadData = () => {
        deleteBtn.setAttribute("onclick", "deletePost(this)");
        postList.appendChild(deleteBtn);
        }
-  
        allPosts.appendChild(postList);
 
       });
@@ -155,7 +153,7 @@ let uploadData = () => {
     deletePost = (e) =>  {
       const post = e.parentElement;
       const key = post.getAttribute('data-key');
-      firebase.database().ref('posts').child(uid).child(key).set(null).then(e => {
+     database.ref('posts').child(uid).child(key).set(null).then(e => {
       post.innerHTML = "";
       });    
   }
@@ -212,7 +210,7 @@ let uploadData = () => {
         window.location.href = "login.html";
         loader.style.display = "none";
         
-      },  3000);
+      },  2000);
       console.log("User has logged out");
     }
   });

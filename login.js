@@ -77,7 +77,6 @@ formRegister.addEventListener("submit", (e) => {
     // Signed in 
     updateuserData();
     let user = cred.user;
-    console.log(user);
     return database.ref('users/' + user.uid).set({
       uid : user.uid,
       username: document.querySelector("#name").value,
@@ -86,20 +85,11 @@ formRegister.addEventListener("submit", (e) => {
       email: user.email,
     });
     
-
-  
-    // ...
   }).then(() => {
-    //
-   
     formRegister.reset();
     formRegister.style.display = "none";
     loader.style.display = "block";
-    setTimeout(() => {
-      
-      window.location.href = "index.html";
-      
-    },  2000);
+   
   
   })
   .catch((error) => {
@@ -120,15 +110,15 @@ formLogin.addEventListener("submit", (e) => {
   let password = document.querySelector("#upsw").value;
 
   firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
-    // Signed in
     let user = userCredential.user;
-    
+    formLogin.style.display = "none";
+    loader.style.display = "block";
+    setTimeout(() => {
     window.location.href = "index.html";
-    
+    }, 2000);
   })
   .catch((error) => {
     let errorCode = error.code;
-    console.log(errorCode);
     let errorMessage = error.message;
     inputError.innerHTML = `<p>${errorMessage} Please use valid email and password</p>`;
     
