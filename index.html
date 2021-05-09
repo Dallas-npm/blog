@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f" crossorigin="anonymous"></script>
 
-
+    <link rel="shortcut icon" type="image/x-icon" href="images/fav.png" />
     <link rel="stylesheet" href="index.css">
     <title>Blog</title>
 </head>
 <body id="top">
     <nav class="navigation">
-        <span class="logo">Dallas</span>
-        <ul class="nav">
+        <span class="logo"><img src="/images/logo.png" alt="logo"></span>
+        <ul class="nav" id="myNavigation">
             <li><a href="index.html"><i class="fas fa-home"> </i>Home</a></li>
             <li id="logout"><a href="#"><i class="fas fa-sign-out-alt"> </i>Logout</a></li>
+            <li><a href="" class="icon">&#9776;</a></li>
             </ul>
            
     </nav>
@@ -28,9 +29,9 @@
                 <div class="left-nav">
                     <a class="about-user" href="user.html">Profile</a>
                     <button class="create-post">Create post</button>
-                   <a href="#top" class="to-top" onclick="scrollToTop()" ><i class="fas fa-arrow-alt-circle-up"></i></a>
+                  
                 </div>
-            
+                <a href="#top" class="to-top" onclick="scrollToTop()" ><i class="fas fa-arrow-alt-circle-up"></i></a>
         </div>
         <div class="post-modal">
            

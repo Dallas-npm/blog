@@ -16,10 +16,14 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 }
 
 
- .logo {
+.logo {
     float: left;
     color: #66FCF1;
-    padding: 1.25rem;
+    padding: 5px;
+ }
+
+ .logo img {
+     height: 46px;
  }
 
 .navigation {
@@ -54,6 +58,12 @@ li {
     background-color: #EEFBFB;
     color: black;
     
+}
+
+/* mobile navigation */
+
+.navigation .icon {
+    display: none;
 }
 
  .navigation a {
@@ -110,9 +120,8 @@ li {
 }
 
 .user-info {
+    padding: 10px;
     border-right: 2px solid #6B6E70;
-    flex: 0%;
-    padding-bottom: 5rem;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -122,7 +131,7 @@ li {
     align-self: flex-start;
 }
 .userName {
-    
+    padding: 5px;
     font-family: fantasy;
     margin: 1px;
     font-size: 1.5rem;
@@ -155,7 +164,7 @@ p {
 }
 
 .left-nav {
-    margin-top: 400px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -174,6 +183,7 @@ p {
     font-size: 1.2rem;
     font-family: 'Arvo', serif;
     background: #414345;
+    cursor: pointer;
     
 }
 
@@ -238,6 +248,7 @@ p {
 
   #files {
     margin: 7px 470px 4px 0px;
+    cursor: pointer;
   }
 
   .inputError {
@@ -256,7 +267,13 @@ p {
       color: #f4f1de;
       font-size: 1.2rem;
       font-family: 'Arvo', serif;
-      background: #414345
+      background: #414345;
+      cursor:pointer;
+  }
+
+  .postBtn:hover {
+      background-color: #45A29E;
+
   }
 
   .allPosts { 
@@ -269,7 +286,7 @@ p {
       color: white;
       background-color: #404141;
       width: 80%;
-      padding-left: 1.25rem;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       margin-bottom: 30px;
@@ -304,8 +321,8 @@ p {
   #delete-post {
     font-size: 1.5rem;
     margin-top: -30px;
-    margin-left: 96%;
-
+    margin-left: 99%;
+    cursor: pointer;
   }
 
   #delete-post:hover {
@@ -315,7 +332,7 @@ p {
   .to-top {
       font-size: 1.9rem;
       color: white;
-      margin-top: 5rem;
+      margin-top: 19rem;
   }
 
   /* SHOW USER INFO */
@@ -374,3 +391,87 @@ p {
         width: 90%;
     }
  }
+
+ @media screen and (max-width: 600px) {
+    .nav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .nav a.icon:hover {
+        color: white;
+        background-color: #232526;
+    }
+    .user-info {
+       display: none;
+    }
+    .logo {
+        display: none;
+    }
+    
+
+    .user-info.responsive {
+        display: block;
+        width: 100%;
+        border-bottom: 2px solid #EEFBFB;
+    }
+
+    .user-info.responsive .left-nav {
+        margin: 0px;
+    }
+    .user-info.responsive .to-top {
+        display: none;
+    }
+
+    .user-info.responsive .left-nav .about-user {
+        padding-top: 0px;
+        height: 0%;
+        width: 100%;
+    }
+
+    .user-info.responsive .left-nav button {
+        height: 0%;
+        width: 100%;
+    }
+
+    .content {
+        display: block;
+    }
+
+    .content.responsive {
+        display: block;
+    }
+    
+    .allPosts {
+        margin-left: 0%;
+    }
+    .allPosts li {
+        width: 99%;
+    }
+
+    .post-modal {
+        padding-top: 0px;
+    }
+    #files {
+        margin: 0px;
+    }
+
+    .postBtn {
+        width: 100%;
+    }
+
+    li h2 {
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    li img {
+        padding: 5px;
+        width: 14rem;
+        margin: auto;
+    }
+
+    
+    
+
+}

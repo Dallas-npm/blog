@@ -24,9 +24,11 @@ let formLogin = document.querySelector(".form-login");
 let loader = document.querySelector(".loader");
 let inputError = document.querySelector(".input-error");
 let registerError =  document.querySelector(".register-error");
+let about = document.querySelector(".about-page");
 
 register.onclick = () => {
   formRegister.style.display = "block";
+  about.style.display = "none";
   document.body.style.backgroundColor = "rgba(0, 0, 0, 0.75)"; 
   formLogin.style.display = "none";
   
@@ -35,6 +37,7 @@ register.onclick = () => {
 cancelBtn.addEventListener("click", () => {
   formRegister.style.display = "none";
   formRegister.reset();
+  about.style.display = "block";
   registerError.innerHTML = "";
   document.body.style.backgroundColor = "#0f0e17"; 
 });
@@ -42,6 +45,7 @@ cancelBtn.addEventListener("click", () => {
 loginCancel.addEventListener("click", () => {  
   formLogin.style.display = "none";
   formLogin.reset();
+  about.style.display = "block";
   inputError.innerHTML = "";
   document.body.style.backgroundColor = "#0f0e17"; 
   
@@ -53,6 +57,7 @@ window.addEventListener("click", (e) => {
       formRegister.style.display = "none";
       formLogin.style.display = "none";
       formRegister.reset();
+      about.style.display = "block";
       registerError.innerHTML = "";
       inputError.innerHTML = "";
       document.body.style.backgroundColor = "#0f0e17";
@@ -62,6 +67,7 @@ window.addEventListener("click", (e) => {
 signIn.addEventListener("click", () => {
   formLogin.style.display = "block";
   formRegister.style.display = "none";
+  about.style.display = "none";
   document.body.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
  
 });
@@ -89,7 +95,9 @@ formRegister.addEventListener("submit", (e) => {
     formRegister.reset();
     formRegister.style.display = "none";
     loader.style.display = "block";
-   
+    setTimeout(() => {
+      window.location.href = "index.html";
+      }, 2000);
   
   })
   .catch((error) => {

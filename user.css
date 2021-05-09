@@ -16,10 +16,14 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
 }
 
 
- .logo {
+.logo {
     float: left;
     color: #66FCF1;
-    padding: 1.25rem;
+    padding: 5px;
+ }
+
+ .logo img {
+     height: 46px;
  }
 
 .navigation {
@@ -78,38 +82,6 @@ li {
    
 }
 
-
-
-.content {
-    display: flex;
-
-}
-
-
-
-.post-display {
-    flex: 75%;
-    align-items: center;
-}
-
-.user-info {
-    border-right: 2px solid #6B6E70;
-    flex: 0%;
-    padding-bottom: 5rem;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    color: #fffffe;
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-}
-.userName {
-    
-    font-family: fantasy;
-    margin: 1px;
-    font-size: 1.5rem;
-}
 hr {
     width: 100%;
     border: 1px solid #21413f;
@@ -176,11 +148,6 @@ p {
       border-radius: 10px;
   }
 
-  textarea {
-      resize: none;
-      border-radius: 10px;
-      background-color: #E2DBE2;
-  }
 
   input[type=text], input[type=date] {
       height: 20px;
@@ -203,64 +170,6 @@ p {
       background: #414345
   }
 
- 
-
-  .allPosts { 
-      margin-left: 10%;
-   }
-
-  
-  .allPosts li {
-      margin-top: 1.5rem;
-      color: white;
-      background-color: #404141;
-      width: 80%;
-      padding-left: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 30px;
-      align-items: flex-start;
-  }
-
-  li > h2 {
-      color:white;
-      font-family: 'Arvo', serif;
-      text-transform: uppercase;
-      text-align: left;
-      font-size: 1.8rem;
-      margin-bottom: 5px;
-
-  }
-
-  li > span {
-      font-size: 0.7rem;
-  }
-
-  li > p {
-      margin-top: 10px;
-  }
-
-  li > img {
-      width: 25rem;
-      height: 9.3rem;
-      margin-left: 22%;
-  }
-
-  #delete-post {
-    font-size: 1.9rem;
-    margin-top: 1rem;
-    margin-left: 95%;
-  }
-
-  #delete-post:hover {
-      opacity: 0.5;
-  }
-
-  .to-top {
-      font-size: 1.9rem;
-      color: white;
-      margin-top: 5rem;
-  }
 
   /* SHOW USER INFO */
 
@@ -295,29 +204,34 @@ p {
 .open-update {
     background-color: #232526;
     border: 2px solid #2db9b0;
-    padding: 3px;
+    padding: 5px;
     border-radius: 5%;
     color: white;
     font-family: 'Arvo', serif;
+    cursor: pointer;
 }
 .delete-profile {
-    background-color: #232526;
+    background-color: #a32323;
     border: 2px solid #2db9b0;
     padding: 3px;
     border-radius: 5%;
     color: white;
     font-family: 'Arvo', serif;
-    margin-right: 277px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .open-update:hover, .delete-profile:hover {
     background-color: #2db9b0;
     color: white;
+    cursor: pointer;
 
 }
 
 .buttons {
-    margin-left: 30%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
  
 
@@ -344,28 +258,19 @@ p {
 
 /* media queries */
 
-@media screen and (max-width: 600px) {
-    .navigation a {
-      color: gold;
-      width: 100%;
-    }
 
-    .open-update {
-        margin-left: 83%; 
-        padding: 0px 15px;
-    }
-
-   
-  }
 
 @media screen and (max-width: 300px) {
     .navigation a {
-      color: red;
       width: 100%;
     }
 
+    .show-profile {
+        width: 50%;
+    }
+
     .open-update {
-        margin-left: 45%; 
+        margin-left: 2%; 
         padding: 0px 15px;
     }
     .show-profile span {
@@ -378,7 +283,15 @@ p {
     .user-form {
         width: 90%;
     }
+    
+.open-update:hover, .delete-profile:hover {
+    background-color: #2db9b0;
+    color: white;
+    
+
+}
   }
+
   .loader {
     display: none;
     width: 160px;

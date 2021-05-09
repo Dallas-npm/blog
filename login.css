@@ -26,7 +26,11 @@ body {
  .logo {
     float: left;
     color: #66FCF1;
-    padding: 20px;
+    padding: 5px;
+ }
+
+ .logo img {
+     height: 46px;
  }
 
 .navigation {
@@ -172,3 +176,31 @@ button:hover {
     font: 0.9rem "Roboto", sans-serif;
 }
 
+.about-page {
+    text-align: center;
+    color: white;
+    margin: 10% auto;
+    width: 30%;
+    font-family: 'Arvo', serif;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 300px) {
+    .logo {
+        display: none;
+    }
+
+    .nav-right {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-register, .form-login {
+        margin: 0% auto 5% auto;
+        width: 90%;
+    }
+    .about-page {
+        width: 80%;
+        font-size: 1.3rem;
+    }
+}

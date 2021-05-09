@@ -196,9 +196,9 @@ let deleteProfile = document.querySelector(".delete-profile");
 deleteProfile.addEventListener("click", e => {
   e.preventDefault();
   let user = firebase.auth().currentUser;
-console.log(user);
 if(user.uid === uid) {
-  
+  let result = confirm("Are You sure want to delete");
+  if(result) {
   database.ref('users').child(uid).set(null);
   database.ref('profiles').child(uid).set(null);  
 user.delete().then(() => {
@@ -207,5 +207,6 @@ user.delete().then(() => {
 }).catch(error => {
   console.log(error.message);
 });
+  }
 }
 });

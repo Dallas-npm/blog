@@ -29,7 +29,7 @@ var firebaseConfig = {
   let userInfo = document.querySelector(".user-info");
   let loader = document.querySelector(".loader");
   let inputError = document.querySelector(".inputError");
- 
+  let content = document.querySelector(".content");
 
   logout.addEventListener("click", () => {
   firebase.auth().signOut().then(() => {
@@ -43,6 +43,7 @@ var firebaseConfig = {
   //create post
   createBtn.addEventListener("click", (e) => {
     modal.style.display = "block";
+    userInfo.className = "user-info";
     e.preventDefault();
   });
 
@@ -226,3 +227,23 @@ if(position) {
 } 
 
 }
+
+let icon = document.querySelector(".icon");
+
+icon.addEventListener("click", e => {
+  e.preventDefault();
+  if(userInfo.className === "user-info") {
+    userInfo.className += " responsive";
+  } else {
+    userInfo.className = "user-info";
+  }
+
+  if(content.className === "content") {
+    content.className += " responsive";
+  } else {
+    content.className = "content";
+  }
+
+  
+
+})
