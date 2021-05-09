@@ -146,6 +146,10 @@ button:hover {
     width: 50%;
 }
 
+.star {
+    color: #2db9b0;
+}
+
 
 .buttons::after {
     content: "";
@@ -179,7 +183,7 @@ button:hover {
 .about-page {
     text-align: center;
     color: white;
-    margin: 10% auto;
+    margin: 9% auto;
     width: 30%;
     font-family: 'Arvo', serif;
     font-size: 2rem;
