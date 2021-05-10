@@ -22,7 +22,7 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     padding: 5px;
  }
 
- .logo img {
+ #logo img {
      height: 46px;
  }
 
@@ -66,7 +66,7 @@ li {
     display: none;
 }
 
- .navigation a {
+ .nav a {
     color: #EEFBFB;
     text-decoration: none;
     float: left;
@@ -75,7 +75,7 @@ li {
     text-align: center;
 }
 
- .navigation a:hover {
+ .nav a:hover {
     color: black;
     background-color: #fffffe;
    
@@ -379,20 +379,14 @@ p {
 
   }
 
+  .navigation span a:hover {
+    background-color: #404141;
+  }
+
 
  /* media queries */ 
 
- @media screen and (max-width: 300px) { 
-    .left-nav {
-        margin-top: 260px;
-    }
-
-    .post-form {
-        width: 90%;
-    }
- }
-
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 500px) {
     .nav a.icon {
         float: right;
         display: block;

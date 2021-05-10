@@ -60,7 +60,7 @@ li {
     
 }
 
- .navigation a {
+.nav a {
     color: #EEFBFB;
     text-decoration: none;
     float: left;
@@ -69,7 +69,7 @@ li {
     text-align: center;
 }
 
- .navigation a:hover {
+ .nav a:hover {
     color: black;
     background-color: #fffffe;
    
@@ -255,12 +255,16 @@ p {
     padding: 8px;
 }
 
+.navigation span a:hover {
+    background-color: #404141;
+  }
+
 
 /* media queries */
 
 
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
     .navigation a {
       width: 100%;
     }

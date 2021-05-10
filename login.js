@@ -25,6 +25,21 @@ let loader = document.querySelector(".loader");
 let inputError = document.querySelector(".input-error");
 let registerError =  document.querySelector(".register-error");
 let about = document.querySelector(".about-page");
+let SignInLink = document.querySelector(".link-signIn");
+let SignUpLink = document.querySelector(".link-register");
+
+
+SignInLink.addEventListener("click", e => {
+  e.preventDefault();
+  formRegister.style.display = "none";
+  formLogin.style.display = "block";
+});
+
+SignUpLink.addEventListener("click", e => {
+  e.preventDefault();
+  formLogin.style.display = "none";
+  formRegister.style.display = "block";
+});
 
 register.onclick = () => {
   formRegister.style.display = "block";
